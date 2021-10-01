@@ -1,7 +1,6 @@
 # Google Docs
 App Progress:
 
-Keys- [-] In Progress [✔] Done [❌] Not Done
 1. [x] Development
 2. [ ] Packaging
 3. [ ] Release
