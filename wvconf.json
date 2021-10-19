@@ -1,0 +1,12 @@
+{
+  "downloadDir": "{{baseDir}}/Downloads/WidevineCDM",
+  "installDir": "{{baseDir}}/WidevineCDM",
+  "updateDir": "{{baseDir}}/WidevineCDM.pending",
+  "lastDir": "{{baseDir}}/WidevineCDM.last",
+  "baseURL": "https://redirector.gvt1.com/edgedl/widevine-cdm/",
+  "versionURL": "versions.txt",
+  "versionPattern": "^4\\.10\\..+$",
+  "zipURL": "{{latestVersion}}-{{platform}}-{{arch}}.zip",
+  "digestType": "sha256",
+  "digestURL": "{{latestVersion}}-{{platform}}-{{arch}}.zip.sha256"
+}
