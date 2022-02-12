@@ -1,0 +1,31 @@
+{
+  "name": "google-docs",
+  "productName": "Google Docs",
+  "version": "1.0.0",
+  "description": "Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/comp-labs/Google-Docs",
+  "keywords": [
+    "Google",
+    "Docs",
+    "Productivity",
+    "App"
+  ],
+  "author": "Comp Labs",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^16.0.2"
+  },
+  "build": {
+    "appId": "com.complabs.GoogleDocs",
+    "windows": {
+      "category": "com.complabs.GoogleDocs.category.productivity"
+    },
+    "linux": {
+      "category": "com.complabs.GoogleDocs.category.productivity"
+    }
+  }
+}
