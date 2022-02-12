@@ -7,3 +7,6 @@ App Progress:
 
 ## Description
 Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.
+
+## License
+[MIT License](LICENSE.md)
