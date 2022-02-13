@@ -5,9 +5,9 @@
   "description": "Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
-  "repository": "https://github.com/comp-labs/Google-Docs",
   "keywords": [
     "Google",
     "Docs",
@@ -17,15 +17,70 @@
   "author": "Comp Labs",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^16.0.2"
+    "electron": "^16.0.2",
+    "electron-packager": "^15.4.0",
+    "electron-builder": "^22.3.2"
   },
   "build": {
-    "appId": "com.complabs.GoogleDocs",
-    "windows": {
-      "category": "com.complabs.GoogleDocs.category.productivity"
+    "productName": "Google Docs",
+    "generateUpdatesFilesForAllChannels": true,
+    "mac": {
+      "artifactName": "Google-Docs.${ext}",
+      "target": [
+        {
+          "arch": "universal",
+          "target": "dmg"
+        },
+        {
+          "arch": "universal",
+          "target": "zip"
+        }
+      ],
+      "category": "com.complabs.Google-Docs.category.productivity",
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "asarUnpack": "**/*.node"
     },
     "linux": {
-      "category": "com.complabs.GoogleDocs.category.productivity"
+      "artifactName": "Google-Docs-${arch}.${ext}",
+      "category": "CompLabs;GoogleDocs;Category;Productivity",
+      "executableName": "Google-Docs",
+      "target": [
+        {
+          "arch": "x64",
+          "target": "snap"
+        },
+        {
+          "arch": "x64",
+          "target": "AppImage"
+        },
+        {
+          "arch": "x64",
+          "target": "deb"
+        }
+      ]
+    },
+    "deb": {
+      "depends": [
+        "libgtk-3-0",
+        "libnss3",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1"
+      ]
+    },
+    "win": {
+      "artifactName": "Google-Docs.${ext}",
+      "target": [
+        {
+          "arch": [
+            "ia32",
+            "x64"
+          ],
+          "target": "nsis"
+        }
+      ]
     }
   }
 }
