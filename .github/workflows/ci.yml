@@ -41,8 +41,7 @@ jobs:
       with:
         snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
     - name: Use Snapcraft
-        run: |
-          snapcraft upload --release=stable dist/comp-labs-meet-amd64.snap
+        run: snapcraft upload --release=stable dist/comp-labs-meet-amd64.snap
   build-mac:
     name: macOS
     runs-on: macos-latest
