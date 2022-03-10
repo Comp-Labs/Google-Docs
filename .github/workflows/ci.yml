@@ -14,14 +14,11 @@ jobs:
   build-linux:
     name: Linux
     runs-on: ubuntu-latest
-
     steps:
     uses: actions/checkout@v2
-
     - uses: actions/setup-node@v2
       with:
         node-version: '16'
-
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,7 +27,6 @@ jobs:
         npm install -g electron-builder
         npm run dist
         electron-builder --linux snap --publish onTagOrDraft
-
     - name: Install Snapcraft
     - uses: samuelmeuli/action-snapcraft@v1.2.0
       with:
