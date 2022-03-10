@@ -16,8 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out Git repository
-        uses: actions/checkout@v2
+    uses: actions/checkout@v2
 
     - uses: actions/setup-node@v2
       with:
@@ -38,7 +37,7 @@ jobs:
         snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
     - name: Use Snapcraft
         run: snapcraft upload --release=stable dist/comp-labs-meet-amd64.snap
-        
+
     - uses: actions/upload-artifact@v2
       with:
         name: linux-binaries
