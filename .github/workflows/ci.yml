@@ -26,7 +26,7 @@ jobs:
         npm install
         npm install -g electron-builder
         npm run dist
-        electron-builder --linux snap
+        electron-builder --linux snap --publish onTagOrDraft
 # npm run dist
     - uses: actions/upload-artifact@v2
       with:
@@ -36,6 +36,13 @@ jobs:
           dist/Google-Docs-amd64.deb
           dist/Google-Docs-x86_64.AppImage
           dist/latest-linux.yml
+    - name: Install Snapcraft
+    - uses: samuelmeuli/action-snapcraft@v1.2.0
+      with:
+        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
+    - name: Use Snapcraft
+        run: |
+          snapcraft upload --release=stable dist/comp-labs-meet-amd64.snap
   build-mac:
     name: macOS
     runs-on: macos-latest
