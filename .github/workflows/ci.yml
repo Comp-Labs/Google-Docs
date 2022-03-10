@@ -15,7 +15,7 @@ jobs:
     name: Linux
     runs-on: ubuntu-latest
     steps:
-    uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
         node-version: '16'
@@ -27,21 +27,22 @@ jobs:
         npm install -g electron-builder
         npm run dist
         electron-builder --linux snap --publish onTagOrDraft
-    - name: Install Snapcraft
-    - uses: samuelmeuli/action-snapcraft@v1.2.0
-      with:
-        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
-    - name: Use Snapcraft
-        run: snapcraft upload --release=stable dist/comp-labs-meet-amd64.snap
-
     - uses: actions/upload-artifact@v2
       with:
-        name: linux-binaries
+        name: Linux
         path: |
           dist/Google-Docs-amd64.snap
           dist/Google-Docs-amd64.deb
           dist/Google-Docs-x86_64.AppImage
           dist/latest-linux.yml
+    - name: Install Snapcraft
+      uses: samuelmeuli/action-snapcraft@v1.2.0
+      with:
+        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
+    - name: Use Snapcraft
+      run: |
+        snapcraft --help
+        snapcraft upload --release=stable dist/Google-Docs-amd64.snap
     
     build-mac:
     name: macOS
