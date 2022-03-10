@@ -31,9 +31,9 @@ jobs:
       with:
         name: Linux
         path: |
-          dist/Google-Docs-amd64.snap
-          dist/Google-Docs-amd64.deb
           dist/Google-Docs-x86_64.AppImage
+          dist/Google-Docs-amd64.deb
+          dist/Google-Docs-amd64.snap
           dist/latest-linux.yml
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v1.2.0
@@ -43,7 +43,7 @@ jobs:
       run: |
         snapcraft --help
         snapcraft upload --release=stable dist/Google-Docs-amd64.snap
-    
+  
     build-mac:
     name: macOS
     runs-on: macos-latest
