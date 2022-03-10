@@ -44,7 +44,7 @@ jobs:
         snapcraft --help
         snapcraft upload --release=stable dist/Google-Docs-amd64.snap
   
-    build-mac:
+  build-mac:
     name: macOS
     runs-on: macos-latest
     steps:
