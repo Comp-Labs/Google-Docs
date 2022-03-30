@@ -3,6 +3,7 @@ name: Build Google Docs
 on:
   # Trigger the workflow on push or pull request,
   # but only for the main branch
+  # Snapcraft Token Valid till 10 March, 2023
   push:
     branches:
       - main
