@@ -1,7 +1,7 @@
 {
   "name": "google-docs",
   "productName": "Google Docs",
-  "version": "2022.3.10",
+  "version": "2022.6.1",
   "description": "Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.",
   "main": "main.js",
   "scripts": {
@@ -17,8 +17,8 @@
   "author": "Comp Labs <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^16.0.2",
-    "electron-packager": "^15.4.0",
+    "electron": "^16.2.8",
+    "electron-packager": "^15.5.1",
     "electron-builder": "^22.3.2"
   },
   "build": {
