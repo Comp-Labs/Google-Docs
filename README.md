@@ -8,7 +8,7 @@
 - Compatible with Linux! (Microsoft Office is not compatible with Linux.)
 
 ## Caution ⚠️
-**Make sure you are connected to the Internet During Editing Documents to avoid any loss of data. But Changes will be saved automatically in your Google Drive if you disconnect from the Internet. So the Result, you do not lose changes!**
+**Make sure you are connected to the Internet During Editing Documents to avoid any loss of data. Changes made to your document are saved to Google Drive Time-to-Time. So the Bright Part is, you do not Lose Changes!**
 
 ## Download Instructions 📦
 **First, go to the [releases page.](https://github.com/Comp-Labs/Google-Docs/releases) Then, Browse to the bottom of the page and you'll see a list of files. Then, download and install the package for your Operating System. Which one package is for your Operating System are written below:**
