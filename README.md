@@ -1,7 +1,8 @@
 # Google Docs
-**Google Docs is an Online Word Processor Developed by Google. Google Docs' Design and Features are better from Free Office such as OpenOffice, LibreOffice etc. This is an app that contains full suite of Google Docs, Sheets, and Slides for Windows, macOS, and Linux.**
+**Google Docs is an Online Word Processor Developed by Google. Better Design and Features compared to Free Office such as OpenOffice, LibreOffice etc. This is an app that contains full suite of Google Docs, Sheets, and Slides for Windows, macOS, and Linux.**
 
 ## Features
+- Freemium Software - Absolutely Free Software with Premium Features
 - Google Docs, Sheets, and Slides included.
 - Powerful and filled with features such as Microsoft Office
 - Compatible with Linux! (Microsoft Office is not compatible with Linux.)
@@ -14,10 +15,10 @@
 
 **These are the Download Instructions to Download the correct package for your Operating System.**
 
-- **The files with the extension `snap`, `AppImage`, and `deb` are the packages for the GNU/Linux GUI Operating System.**
-- **The file with the extension `exe` is the packages for the Microsoft Windows Operating System.**
+- **The files with the extension `snap`, `AppImage`, and `deb` are the packages for the GNU/Linux Operating System.**
+- **The file with the extension `exe` is the package for the Microsoft Windows Operating System.**
 - **The files with the extension `dmg`, and the file named `Google-Docs.zip` are the packages for the Apple macOS Operating System.**
-- **The Files with the extension `yml` are for no use. It helps only the app developers that create or modify the app. You do not have to download or install the file with the `yml` extension.**
+- **The Files with the extension `yml` contains the binary details of the OS-Specific Package. `latest.yml` is for Windows, `latest-macos` is for macOS and `latest-linux` is for Linux. In most cases you don't need to download them.**
 
 ## Final Words ✨
 **Thanks for Using it and we encourage users to use it.**
