@@ -20,7 +20,7 @@
 - **The Files with the extension `yml` are for no use. It helps only the app developers that create or modify the app. You do not have to download or install the file with the `yml` extension.**
 
 ## Final Words ✨
-**Thanks for Using it and we encourage users to use it. **
+**Thanks for Using it and we encourage users to use it.**
 
 ## License
 [MIT License](LICENSE.md)
