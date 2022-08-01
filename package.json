@@ -17,7 +17,7 @@
   "author": "Comp Labs <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^16.2.8",
+    "electron": "^19.0.10",
     "electron-packager": "^15.5.1",
     "electron-builder": "^23.3.3"
   },
