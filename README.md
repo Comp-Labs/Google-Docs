@@ -20,6 +20,11 @@
 - **The files with the extension `dmg`, and the file named `Google-Docs.zip` are the packages for the Apple macOS Operating System.**
 - **The Files with the extension `yml` contains the binary details of the OS-Specific Package. `latest.yml` is for Windows, `latest-macos` is for macOS and `latest-linux` is for Linux. In most cases you don't need to download them.**
 
+On Windows, instead of manually downloading the releases, on your computer, you can install/update it using the [Chocolatey package](https://community.chocolatey.org/packages/unofficial-google-docs-client):
+```powershell
+choco install unofficial-google-docs-client
+```
+
 ## Final Words ✨
 **Thanks for Using it and we encourage users to use it.**
 
