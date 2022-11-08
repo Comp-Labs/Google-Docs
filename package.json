@@ -1,7 +1,7 @@
 {
   "name": "google-docs",
   "productName": "Google Docs",
-  "version": "2022.6.1",
+  "version": "2022.12.1",
   "description": "Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.",
   "main": "main.js",
   "scripts": {
@@ -14,18 +14,18 @@
     "Productivity",
     "App"
   ],
-  "author": "Comp Labs <complabs28@gmail.com>",
+  "author": "Tech Fiddle <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^20.0.1",
-    "electron-packager": "^16.0.0",
+    "electron": "^21.2.2",
+    "electron-packager": "^17.1.1",
     "electron-builder": "^23.3.3"
   },
   "build": {
     "productName": "Google Docs",
     "generateUpdatesFilesForAllChannels": true,
     "mac": {
-      "artifactName": "Google-Docs.${ext}",
+      "artifactName": "Google-Docs-${os}-${version}.${ext}",
       "target": [
         {
           "arch": "universal",
@@ -36,13 +36,13 @@
           "target": "zip"
         }
       ],
-      "category": "com.complabs.Google-Docs.category.productivity",
+      "category": "io.techfiddle.Google-Docs.category.productivity",
       "darkModeSupport": true,
       "hardenedRuntime": true,
       "asarUnpack": "**/*.node"
     },
     "linux": {
-      "artifactName": "Google-Docs-${arch}.${ext}",
+      "artifactName": "Google-Docs-${os}-${arch}-${version}.${ext}",
       "category": "CompLabs;GoogleDocs;Category;Productivity",
       "executableName": "Google-Docs",
       "target": [
@@ -71,7 +71,7 @@
       ]
     },
     "win": {
-      "artifactName": "Google-Docs.${ext}",
+      "artifactName": "Google-Docs-${os}-${version}.${ext}",
       "target": [
         {
           "arch": [
