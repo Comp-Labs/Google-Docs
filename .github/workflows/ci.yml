@@ -34,11 +34,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Linux
-        path: |
-          dist/Google-Docs-linux-x86_64-${{ steps.gdocs-version.outputs.current-version}}.AppImage
-          dist/Google-Docs-linux-amd64-${{ steps.gdocs-version.outputs.current-version}}.deb
-          dist/Google-Docs-linux-amd64-${{ steps.gdocs-version.outputs.current-version}}.snap
-          dist/latest-linux.yml
+        path: dist/*
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v1.2.0
       with:
@@ -56,9 +52,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
-    - name: npm-version
-      id: gdocs-version
-      uses: martinbeentjes/npm-get-version-action@main
     - name: Prepare for app signing and notarization
       env:
         API_KEY: ${{ secrets.api_key }}
@@ -78,10 +71,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: macOS
-        path: |
-          dist/Google-Docs-mac-${{ steps.gdocs-version.outputs.current-version}}.dmg
-          dist/Google-Docs-mac-${{ steps.gdocs-version.outputs.current-version}}.zip
-          dist/latest-mac-mac-${{ steps.gdocs-version.outputs.current-version}}.yml
+        path: dist/*
   build-windows:
     name: Windows
     runs-on: windows-latest
@@ -90,9 +80,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
-    - name: npm-version
-      id: gdocs-version
-      uses: martinbeentjes/npm-get-version-action@main
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -102,6 +89,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Windows
-        path: |
-          dist/Google-Docs-win-${{ steps.gdocs-version.outputs.current-version}}.exe
-          dist/latest.yml
+        path: dist/*
