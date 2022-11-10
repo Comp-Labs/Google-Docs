@@ -16,10 +16,13 @@ jobs:
     name: Linux
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkoutv3
+    - uses: actions/setup-nodev3
       with:
         node-version: '16'
+    - name: npm-version
+      id: gdocs-version
+      uses: martinbeentjes/npm-get-version-action@main
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,13 +31,13 @@ jobs:
         npm install -g electron-builder
         npm run dist
         electron-builder --linux snap --publish onTagOrDraft
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: Linux
         path: |
-          dist/Google-Docs-x86_64.AppImage
-          dist/Google-Docs-amd64.deb
-          dist/Google-Docs-amd64.snap
+          dist/Google-Docs-linux-x86_64-${{ steps.gdocs-version.outputs.current-version}}.AppImage
+          dist/Google-Docs-linux-amd64-${{ steps.gdocs-version.outputs.current-version}}.deb
+          dist/Google-Docs-linux-amd64-${{ steps.gdocs-version.outputs.current-version}}.snap
           dist/latest-linux.yml
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v1.2.0
@@ -43,16 +46,19 @@ jobs:
     - name: Use Snapcraft
       run: |
         snapcraft --help
-        snapcraft upload --release=stable dist/Google-Docs-amd64.snap
+        snapcraft upload --release=stable dist/Google-Docs-linux-amd64-${{ steps.gdocs-version.outputs.current-version}}.snap
   
   build-mac:
     name: macOS
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '16'
+    - name: npm-version
+      id: gdocs-version
+      uses: martinbeentjes/npm-get-version-action@main
     - name: Prepare for app signing and notarization
       env:
         API_KEY: ${{ secrets.api_key }}
@@ -69,30 +75,33 @@ jobs:
       run: |
         npm install
         npm run dist
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
-        name: mac-binaries
+        name: macOS
         path: |
-          dist/Google-Docs.dmg
-          dist/Google-Docs.zip
-          dist/latest-mac.yml
+          dist/Google-Docs-mac-${{ steps.gdocs-version.outputs.current-version}}.dmg
+          dist/Google-Docs-mac-${{ steps.gdocs-version.outputs.current-version}}.zip
+          dist/latest-mac-mac-${{ steps.gdocs-version.outputs.current-version}}.yml
   build-windows:
     name: Windows
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '16'
+    - name: npm-version
+      id: gdocs-version
+      uses: martinbeentjes/npm-get-version-action@main
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
         npm run dist
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
-        name: windows-binaries
+        name: Windows
         path: |
-          dist/Google-Docs.exe
+          dist/Google-Docs-win-${{ steps.gdocs-version.outputs.current-version}}.exe
           dist/latest.yml
