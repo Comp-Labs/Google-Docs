@@ -1,4 +1,4 @@
-name: Build Google Docs
+name: Build
 
 on:
   # Trigger the workflow on push or pull request,
@@ -16,8 +16,8 @@ jobs:
     name: Linux
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkoutv3
-    - uses: actions/setup-nodev3
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '16'
     - name: npm-version
