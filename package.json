@@ -17,7 +17,7 @@
   "author": "Tech Fiddle <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^21.2.2",
+    "electron": "^22.1.0",
     "electron-packager": "^17.1.1",
     "electron-builder": "^23.3.3"
   },
