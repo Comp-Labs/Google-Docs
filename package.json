@@ -25,7 +25,7 @@
     "productName": "Google Docs",
     "generateUpdatesFilesForAllChannels": true,
     "mac": {
-      "artifactName": "Google-Docs-${os}-${version}.${ext}",
+      "artifactName": "Google-Docs-${os}.${ext}",
       "target": [
         {
           "arch": "universal",
@@ -42,7 +42,7 @@
       "asarUnpack": "**/*.node"
     },
     "linux": {
-      "artifactName": "Google-Docs-${os}-${arch}-${version}.${ext}",
+      "artifactName": "Google-Docs-${os}-${arch}.${ext}",
       "category": "CompLabs;GoogleDocs;Category;Productivity",
       "executableName": "Google-Docs",
       "target": [
@@ -71,7 +71,7 @@
       ]
     },
     "win": {
-      "artifactName": "Google-Docs-${os}-${version}.${ext}",
+      "artifactName": "Google-Docs-${os}.${ext}",
       "target": [
         {
           "arch": [
