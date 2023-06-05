@@ -23,3 +23,5 @@ choco install unofficial-google-docs-client
 
 ## License
 [MIT License](LICENSE.md)
+
+################################### Note: Snap Desktop File Issue & Flatpak
