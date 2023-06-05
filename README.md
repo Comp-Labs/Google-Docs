@@ -11,7 +11,7 @@
 Make sure you are connected to the Internet During Editing Documents to avoid any loss of data. Changes made to your document are saved to Google Drive Time-to-Time. So the Bright Part is, you do not Lose Changes!
 
 ## Download Instructions 📦
-[Click Here](https://complabs.in/apps/Google-Docs/), then click on the button of your Operating System to download.
+[Click Here](https://techfiddle.io/apps/Google-Docs/), then click on the button of your Operating System to download.
 
 On Windows, instead of manually downloading the setup file, you can install/update it using the [Chocolatey package](https://community.chocolatey.org/packages/unofficial-google-docs-client):
 ```powershell
@@ -23,3 +23,5 @@ choco install unofficial-google-docs-client
 
 ## License
 [MIT License](LICENSE.md)
+
+################################### Note: Snap Desktop File Issue & Flatpak

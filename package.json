@@ -43,7 +43,7 @@
     },
     "linux": {
       "artifactName": "Google-Docs-${os}-${arch}.${ext}",
-      "category": "CompLabs;GoogleDocs;Category;Productivity",
+      "category": "TechFiddle;GoogleDocs;Category;Productivity",
       "executableName": "Google-Docs",
       "target": [
         {
