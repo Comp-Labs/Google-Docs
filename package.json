@@ -19,7 +19,7 @@
   "devDependencies": {
     "electron": "^25.0.1",
     "electron-packager": "^17.1.1",
-    "electron-builder": "^23.3.3"
+    "electron-builder": "^24.4.0"
   },
   "build": {
     "productName": "Google Docs",
