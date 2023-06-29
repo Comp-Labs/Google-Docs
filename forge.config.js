@@ -4,7 +4,7 @@ module.exports = {
     arch: 'all',
     buildIdentifier: process.env.IS_BETA ? 'beta' : 'prod',
     packagerConfig: {
-      appBundleId: fromBuildIdentifier({ beta: 'com.beta.app', prod: 'com.app' })
+      appBundleId: fromBuildIdentifier({ beta: 'io.techfiddle.beta.google-docs', prod: 'io.techfiddle.google-docs' })
     },
     appCopyright: 'Copyright (c) 2023 Tech Fiddle & Google. All Rights Reserved.',
     icon: './assets/icon.png',
