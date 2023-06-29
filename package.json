@@ -5,8 +5,10 @@
   "description": "Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder"
+    "start": "electron-forge start",
+    "dist": "electron-builder",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "keywords": [
     "Google",
@@ -17,9 +19,17 @@
   "author": "Tech Fiddle <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^25.0.1",
-    "electron-packager": "^17.1.1",
-    "electron-builder": "^23.3.3"
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-dmg": "^6.1.1",
+    "@electron-forge/maker-flatpak": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-snap": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "@electron-forge/publisher-github": "^6.1.1",
+    "@electron-forge/publisher-snapcraft": "^6.1.1",
+    "electron": "^25.0.1"
   },
   "build": {
     "productName": "Google Docs",
@@ -82,5 +92,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
