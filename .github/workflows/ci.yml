@@ -25,6 +25,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
+        sudo apt install flatpak flatpack-builder elfutils
         npm run make
         npm run publish
     - uses: actions/upload-artifact@v3
