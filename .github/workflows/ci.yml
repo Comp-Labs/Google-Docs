@@ -66,6 +66,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
+        npm insall appdmg --save-dev
         npm run make
     - uses: actions/upload-artifact@v3
       with:
