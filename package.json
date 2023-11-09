@@ -94,6 +94,7 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "elf-utils": "^1.1.0"
   }
 }
