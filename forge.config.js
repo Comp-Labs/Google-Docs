@@ -2,9 +2,9 @@ module.exports = {
   packagerConfig: {
     name: "Google Docs",
     arch: 'all',
-    buildIdentifier: process.env.IS_BETA ? 'beta' : 'prod',
+    buildIdentifier: 'prod',
     packagerConfig: {
-      appBundleId: fromBuildIdentifier({ beta: 'io.techfiddle.beta.google-docs', prod: 'io.techfiddle.google-docs' })
+      appBundleId: 'io.techfiddle.google-docs'
     },
     appCopyright: 'Copyright (c) 2023 Tech Fiddle & Google. All Rights Reserved.',
     icon: './assets/icon.png',
@@ -40,12 +40,12 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: "Google Docs",
+        name: "GoogleDocs",
         authors: 'Tech Fiddle',
         copyright: 'Copyright (c) 2023 Tech Fiddle. All Rights Reserved.',
         description: 'Google Docs Desktop App',
-        exe: 'Google-Docs-Windows',
-        setupExe: 'Google-Docs-Windows',
+        // exe: 'Google-Docs-Windows',
+        setupExe: 'Google-Docs-Windows.exe',
         iconUrl: 'https://cdn.jsdelivr.net/gh/Comp-Labs/cdn/img/apps/electron/google-docs.ico',
         loadingGif: './assets/loading.gif'
       },
