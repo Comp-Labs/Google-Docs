@@ -20,6 +20,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
+    - name: Install Snapcraft
+      uses: samuelmeuli/action-snapcraft@v1.2.0
+      with:
+        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,10 +36,6 @@ jobs:
       with:
         name: Linux
         path: out/make/*
-    - name: Install Snapcraft
-      uses: samuelmeuli/action-snapcraft@v1.2.0
-      with:
-        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
     - name: Use Snapcraft
       run: |
         snapcraft --help
