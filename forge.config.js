@@ -79,7 +79,7 @@ module.exports = {
           description: 'Google Docs Desktop App',
           maintainer: 'Tech Fiddle',
           homepage: 'https://techfiddle.io',
-          icon: '/assets/icon.png',
+          icon: './assets/icon.png',
           depends: [
             "libgtk-3-0",
             "libnss3",
@@ -103,7 +103,7 @@ module.exports = {
           productName: 'Google Docs',
           id: 'io.techfiddle.google-docs',
           genericName: 'Google Docs',
-          icon: '/assets/icon.png',
+          icon: './assets/icon.png',
           description: 'Google Docs Desktop App',
           modules: [
             "libgtk-3-0",
