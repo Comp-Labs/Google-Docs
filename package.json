@@ -19,6 +19,7 @@
   "author": "Tech Fiddle <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "appdmg": "latest",
     "@electron-forge/cli": "^6.1.1",
     "@electron-forge/maker-deb": "^6.1.1",
     "@electron-forge/maker-dmg": "^6.1.1",
