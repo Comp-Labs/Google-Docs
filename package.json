@@ -31,68 +31,6 @@
     "@electron-forge/publisher-snapcraft": "^6.1.1",
     "electron": "^27.0.3"
   },
-  "build": {
-    "productName": "Google Docs",
-    "generateUpdatesFilesForAllChannels": true,
-    "mac": {
-      "artifactName": "Google-Docs-${os}.${ext}",
-      "target": [
-        {
-          "arch": "universal",
-          "target": "dmg"
-        },
-        {
-          "arch": "universal",
-          "target": "zip"
-        }
-      ],
-      "category": "io.techfiddle.Google-Docs.category.productivity",
-      "darkModeSupport": true,
-      "hardenedRuntime": true,
-      "asarUnpack": "**/*.node"
-    },
-    "linux": {
-      "artifactName": "Google-Docs-${os}-${arch}.${ext}",
-      "category": "TechFiddle;GoogleDocs;Category;Productivity",
-      "executableName": "Google-Docs",
-      "target": [
-        {
-          "arch": "x64",
-          "target": "snap"
-        },
-        {
-          "arch": "x64",
-          "target": "AppImage"
-        },
-        {
-          "arch": "x64",
-          "target": "deb"
-        }
-      ]
-    },
-    "deb": {
-      "depends": [
-        "libgtk-3-0",
-        "libnss3",
-        "libxtst6",
-        "xdg-utils",
-        "libatspi2.0-0",
-        "libuuid1"
-      ]
-    },
-    "win": {
-      "artifactName": "Google-Docs-${os}.${ext}",
-      "target": [
-        {
-          "arch": [
-            "ia32",
-            "x64"
-          ],
-          "target": "nsis"
-        }
-      ]
-    }
-  },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "elf-utils": "^1.1.0"
