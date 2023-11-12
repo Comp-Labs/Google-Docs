@@ -71,10 +71,10 @@ module.exports = {
     // },
     {
       name: '@electron-forge/maker-deb',
+      executableName: 'Google-Docs-Linux',
       config: {
         options: {
           name: 'google-docs',
-          executableName: 'Google-Docs-Linux.deb',
           genericName: 'Google Docs',
           productName: 'Google Docs',
           description: 'Google Docs Desktop App',
