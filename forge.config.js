@@ -74,7 +74,7 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: {
         options: {
-          name: 'google-docs',
+          name: 'Google Docs',
           genericName: 'Google Docs',
           productName: 'Google Docs',
           description: 'Google Docs Desktop App',
