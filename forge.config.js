@@ -9,6 +9,7 @@ module.exports = {
     appCopyright: 'Copyright (c) 2023 Tech Fiddle & Google. All Rights Reserved.',
     icon: './assets/icon.png',
     out: './dist',
+    executableName: 'Google-Docs',
     platform: [
       'darwin',
       'win32',
@@ -71,7 +72,6 @@ module.exports = {
     // },
     {
       name: '@electron-forge/maker-deb',
-      executableName: 'Google-Docs-Linux',
       config: {
         options: {
           name: 'google-docs',
