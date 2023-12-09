@@ -8,7 +8,8 @@
     "start": "electron-forge start",
     "dist": "electron-builder",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "keywords": [
     "Google",
@@ -19,20 +20,19 @@
   "author": "Tech Fiddle <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-dmg": "^6.1.1",
-    "@electron-forge/maker-flatpak": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-snap": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
-    "@electron-forge/publisher-github": "^6.1.1",
-    "@electron-forge/publisher-snapcraft": "^6.1.1",
-    "electron": "^27.0.3"
+    "@electron-forge/cli": "latest",
+    "@electron-forge/maker-deb": "latest",
+    "@electron-forge/maker-dmg": "latest",
+    "@electron-forge/maker-flatpak": "latest",
+    "@electron-forge/maker-rpm": "latest",
+    "@electron-forge/maker-snap": "latest",
+    "@electron-forge/maker-squirrel": "latest",
+    "@electron-forge/maker-zip": "latest",
+    "@electron-forge/publisher-github": "latest",
+    "@electron-forge/publisher-snapcraft": "latest",
+    "electron": "^28.0.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
-    "elf-utils": "^1.1.0"
+    "electron-squirrel-startup": "^1.0.0"
   }
 }

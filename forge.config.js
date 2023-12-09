@@ -7,6 +7,7 @@ module.exports = {
       appBundleId: 'io.techfiddle.google-docs'
     },
     appCopyright: 'Copyright (c) 2023 Tech Fiddle & Google. All Rights Reserved.',
+    executableName: "Google-Docs",
     icon: './assets/icon.png',
     out: './dist',
     platform: [
