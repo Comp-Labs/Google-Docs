@@ -30,8 +30,8 @@ jobs:
       run: |
         npm install
         sudo apt install flatpak flatpak-builder elfutils
+        npm run package
         npm run make && cd "out/Google Docs-linux-x64" && ll
-        npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: Linux
@@ -68,7 +68,7 @@ jobs:
       run: |
         npm install
         npm install appdmg --save-dev
-        npm run make
+        npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: macOS
@@ -86,7 +86,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npm run make
+        npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: Windows
