@@ -31,6 +31,7 @@ jobs:
         npm install
         sudo apt install flatpak flatpak-builder elfutils
         npm run package && cd "out/Google Docs-linux-x64" && ls
+        npm run make && npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: Linux
@@ -38,7 +39,7 @@ jobs:
     - name: Use Snapcraft
       run: |
         snapcraft --help
-        snapcraft upload --release=stable out/make/Google-Docs-linux.snap
+        snapcraft upload --release=stable "out/make/Google Docs-linux-x64.snap"
   
   build-mac:
     name: macOS
