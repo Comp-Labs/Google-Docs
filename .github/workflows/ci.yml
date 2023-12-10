@@ -30,8 +30,7 @@ jobs:
       run: |
         npm install
         sudo apt install flatpak flatpak-builder elfutils
-        npm run package
-        npm run make && cd "out/Google Docs-linux-x64" && ll
+        npm run package && cd "out/Google Docs-linux-x64" && ll
     - uses: actions/upload-artifact@v3
       with:
         name: Linux
