@@ -20,29 +20,26 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
-    - name: npm-version
-      id: gdocs-version
-      uses: martinbeentjes/npm-get-version-action@main
+    - name: Install Snapcraft
+      uses: samuelmeuli/action-snapcraft@v1.2.0
+      with:
+        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npm install -g electron-builder
-        npm run dist
-        electron-builder --linux snap --publish onTagOrDraft
+        sudo apt install flatpak flatpak-builder elfutils
+        npm run package && cd "out/Google Docs-linux-x64" && ls
+        npm run make && npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: Linux
-        path: dist/*
-    - name: Install Snapcraft
-      uses: samuelmeuli/action-snapcraft@v1.2.0
-      with:
-        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
+        path: out/make/*
     - name: Use Snapcraft
       run: |
         snapcraft --help
-        snapcraft upload --release=stable dist/Google-Docs-linux-amd64-${{ steps.gdocs-version.outputs.current-version}}.snap
+        snapcraft upload --release=stable "out/make/Google Docs-linux-x64.snap"
   
   build-mac:
     name: macOS
@@ -52,6 +49,9 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
     - name: Prepare for app signing and notarization
       env:
         API_KEY: ${{ secrets.api_key }}
@@ -67,11 +67,12 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npm run dist
+        npm install appdmg --save-dev
+        npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: macOS
-        path: dist/*
+        path: out/make/*
   build-windows:
     name: Windows
     runs-on: windows-latest
@@ -85,8 +86,8 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npm run dist
+        npm run publish
     - uses: actions/upload-artifact@v3
       with:
         name: Windows
-        path: dist/*
+        path: out/make/squirrel.windows/x64/Google-Docs-Windows.exe

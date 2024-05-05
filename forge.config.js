@@ -2,11 +2,12 @@ module.exports = {
   packagerConfig: {
     name: "Google Docs",
     arch: 'all',
-    buildIdentifier: process.env.IS_BETA ? 'beta' : 'prod',
+    buildIdentifier: 'prod',
     packagerConfig: {
-      appBundleId: fromBuildIdentifier({ beta: 'io.techfiddle.beta.google-docs', prod: 'io.techfiddle.google-docs' })
+      appBundleId: 'io.techfiddle.google-docs'
     },
     appCopyright: 'Copyright (c) 2023 Tech Fiddle & Google. All Rights Reserved.',
+    executableName: "google-docs",
     icon: './assets/icon.png',
     out: './dist',
     platform: [
@@ -40,12 +41,12 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: "Google Docs",
+        name: "GoogleDocs",
         authors: 'Tech Fiddle',
         copyright: 'Copyright (c) 2023 Tech Fiddle. All Rights Reserved.',
         description: 'Google Docs Desktop App',
-        exe: 'Google-Docs-Windows',
-        setupExe: 'Google-Docs-Windows',
+        // exe: 'Google-Docs-Windows',
+        setupExe: 'Google-Docs-Windows.exe',
         iconUrl: 'https://cdn.jsdelivr.net/gh/Comp-Labs/cdn/img/apps/electron/google-docs.ico',
         loadingGif: './assets/loading.gif'
       },
@@ -73,13 +74,13 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: {
         options: {
-          name: 'google-docs',
+          name: 'Google Docs',
           genericName: 'Google Docs',
           productName: 'Google Docs',
           description: 'Google Docs Desktop App',
           maintainer: 'Tech Fiddle',
           homepage: 'https://techfiddle.io',
-          icon: '/assets/icon.png',
+          icon: './assets/icon.png',
           depends: [
             "libgtk-3-0",
             "libnss3",
@@ -103,7 +104,7 @@ module.exports = {
           productName: 'Google Docs',
           id: 'io.techfiddle.google-docs',
           genericName: 'Google Docs',
-          icon: '/assets/icon.png',
+          icon: './assets/icon.png',
           description: 'Google Docs Desktop App',
           modules: [
             "libgtk-3-0",
@@ -125,7 +126,7 @@ module.exports = {
       name: '@electron-forge/maker-snap',
       config: {
         name: 'Google-Docs-Linux',
-        executableName: 'Google-Docs-Linux',
+        executableName: 'Google-Docs-Linux.snap',
         grade: 'stable'
       }
     },

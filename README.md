@@ -1,5 +1,5 @@
 # Google Docs
-**Google Docs is an Online Word Processor Developed by Google. Better Design and Features compared to Free Office such as OpenOffice, LibreOffice etc. This is an app that contains full suite of Google Docs, Sheets, and Slides for Windows, macOS, and Linux.**
+**Google Docs is an Online Word Processor Developed by Google. Better Design and Features compared to Free Office such as OpenOffice, LibreOffice etc. This is an app that contains the full suite of Google Docs, Sheets, and Slides for Windows, macOS, and Linux.**
 
 ## Features
 - Freemium Software - Absolutely Free Software with Premium Features
@@ -23,5 +23,3 @@ choco install unofficial-google-docs-client
 
 ## License
 [MIT License](LICENSE.md)
-
-################################### Note: Snap Desktop File Issue & Flatpak

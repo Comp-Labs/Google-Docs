@@ -2,13 +2,14 @@
   "name": "google-docs",
   "productName": "Google Docs",
   "version": "2022.12.1",
-  "description": "Google Docs is an Online Word Processor Developed by Google. It's design and features are very good from Free Office such as OpenOffice, LibreOffice etc. So we made an app for Google Docs, Sheets, Slides for Windows, macOS, and Linux.",
+  "description": "Google Docs is a free universal desktop app containing an office suite.",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
     "dist": "electron-builder",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "keywords": [
     "Google",
@@ -19,79 +20,17 @@
   "author": "Tech Fiddle <complabs28@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-dmg": "^6.1.1",
-    "@electron-forge/maker-flatpak": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-snap": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
-    "@electron-forge/publisher-github": "^6.1.1",
-    "@electron-forge/publisher-snapcraft": "^6.1.1",
-    "electron": "^25.0.1"
-  },
-  "build": {
-    "productName": "Google Docs",
-    "generateUpdatesFilesForAllChannels": true,
-    "mac": {
-      "artifactName": "Google-Docs-${os}.${ext}",
-      "target": [
-        {
-          "arch": "universal",
-          "target": "dmg"
-        },
-        {
-          "arch": "universal",
-          "target": "zip"
-        }
-      ],
-      "category": "io.techfiddle.Google-Docs.category.productivity",
-      "darkModeSupport": true,
-      "hardenedRuntime": true,
-      "asarUnpack": "**/*.node"
-    },
-    "linux": {
-      "artifactName": "Google-Docs-${os}-${arch}.${ext}",
-      "category": "TechFiddle;GoogleDocs;Category;Productivity",
-      "executableName": "Google-Docs",
-      "target": [
-        {
-          "arch": "x64",
-          "target": "snap"
-        },
-        {
-          "arch": "x64",
-          "target": "AppImage"
-        },
-        {
-          "arch": "x64",
-          "target": "deb"
-        }
-      ]
-    },
-    "deb": {
-      "depends": [
-        "libgtk-3-0",
-        "libnss3",
-        "libxtst6",
-        "xdg-utils",
-        "libatspi2.0-0",
-        "libuuid1"
-      ]
-    },
-    "win": {
-      "artifactName": "Google-Docs-${os}.${ext}",
-      "target": [
-        {
-          "arch": [
-            "ia32",
-            "x64"
-          ],
-          "target": "nsis"
-        }
-      ]
-    }
+    "@electron-forge/cli": "latest",
+    "@electron-forge/maker-deb": "latest",
+    "@electron-forge/maker-dmg": "latest",
+    "@electron-forge/maker-flatpak": "latest",
+    "@electron-forge/maker-rpm": "latest",
+    "@electron-forge/maker-snap": "latest",
+    "@electron-forge/maker-squirrel": "latest",
+    "@electron-forge/maker-zip": "latest",
+    "@electron-forge/publisher-github": "latest",
+    "@electron-forge/publisher-snapcraft": "latest",
+    "electron": "^29.1.3"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
