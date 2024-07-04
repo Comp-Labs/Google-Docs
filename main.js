@@ -1,8 +1,9 @@
-// Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu, Notification } = require("electron");
-const path = require("path");
+if (require('electron-squirrel-startup')) return;
 
-if (require('electron-squirrel-startup')) app.quit();
+// Modules to control application life and create native browser window
+const { app, BrowserWindow, Menu, webContents } = require("electron")
+const path = require("path")
+const { updateElectronApp, UpdateSourceType } = require('update-electron-app')
 
 function createWindow() {
   // Create the browser window.
@@ -15,10 +16,9 @@ function createWindow() {
     },
   });
 
-  mainWindow.webContents.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
+  mainWindow.webContents.setUserAgent("Chrome");
   //  = "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko"
-  mainWindow.loadURL("https://docs.google.com");
-
+  mainWindow.loadURL("https://docs.google.com/document/u/0/?pli=1");
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
@@ -32,7 +32,13 @@ app.on("activate", function () {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  mainWindow.webContents.on('new-window', (event, url) => {
+    event.preventDefault()
+    mainWindow.loadURL(url)
+  })
 });
+
+updateElectronApp()
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -96,12 +102,13 @@ const template = [
   },
   // { role: 'viewMenu' }
   {
+    role: 'viewMenu',
     label: "View",
     submenu: [
       { role: "reload" },
       { role: "forceReload" },
-      { role: "goBack" },
-      { role: "goForward" },
+      // { role: "goBack" },
+      // { role: "goForward" },
       { role: "toggleDevTools" },
       { type: "separator" },
       { role: "resetZoom" },
@@ -113,6 +120,7 @@ const template = [
   },
   // { role: 'windowMenu' }
   {
+    role: 'windowMenu',
     label: "Window",
     submenu: [
       { role: "minimize" },
@@ -131,12 +139,52 @@ const template = [
     role: "help",
     submenu: [
       {
-        label: "Made using ElectronJS",
+        label: "Google Docs v2022.12.1",
+        enabled: false
+      },
+      {
+        label: "Website",
         click: async () => {
           const { shell } = require("electron");
-          await shell.openExternal("https://electronjs.org/");
+          await shell.openExternal("https://techfiddle.io/");
         },
       },
+      {
+        label: "Contact Us",
+        click: async () => {
+          const { shell } = require("electron");
+          await shell.openExternal("https://techfiddle.io/contact");
+        },
+      },
+      { type: "separator" },
+      {
+        label: "GitHub",
+        click: async () => {
+          const { shell } = require("electron");
+          await shell.openExternal("https://github.com/Comp-Labs/Google-Docs");
+        },
+      },
+      {
+        label: "YouTube",
+        click: async () => {
+          const { shell } = require("electron");
+          await shell.openExternal("https://youtube.com/@techfiddle");
+        },
+      },
+      {
+        label: "Discord",
+        click: async () => {
+          const { shell } = require("electron");
+          await shell.openExternal("https://discord.gg/GAbzAGKccW");
+        },
+      },
+      {
+        label: "Bento",
+        click: async () => {
+          const { shell } = require("electron");
+          await shell.openExternal("https://bento.me/techfiddle");
+        },
+      }
     ],
   },
 ];
