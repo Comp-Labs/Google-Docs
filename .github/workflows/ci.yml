@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '22'
     - name: Install Snapcraft
       uses: samuelmeuli/action-snapcraft@v1.2.0
       with:
@@ -48,7 +48,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '22'
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10'
@@ -80,7 +80,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '22'
     - name: Build it
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
