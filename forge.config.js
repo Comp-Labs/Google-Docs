@@ -3,9 +3,7 @@ module.exports = {
     name: "Google Docs",
     arch: 'all',
     buildIdentifier: 'prod',
-    packagerConfig: {
-      appBundleId: 'io.techfiddle.google-docs'
-    },
+    appBundleId: 'io.techfiddle.google-docs',
     appCopyright: 'Copyright (c) 2023 Tech Fiddle & Google. All Rights Reserved.',
     executableName: "google-docs",
     icon: './assets/icon.png',
@@ -48,6 +46,7 @@ module.exports = {
         // exe: 'Google-Docs-Windows',
         setupExe: 'Google-Docs-Windows.exe',
         iconUrl: 'https://cdn.jsdelivr.net/gh/Comp-Labs/cdn/img/apps/electron/google-docs.ico',
+        setupIcon: './assets/icon.ico',
         loadingGif: './assets/loading.gif'
       },
     },
@@ -125,9 +124,25 @@ module.exports = {
     {
       name: '@electron-forge/maker-snap',
       config: {
-        name: 'Google-Docs-Linux',
-        executableName: 'Google-Docs-Linux.snap',
-        grade: 'stable'
+        name: 'googledocs',
+        summary: 'Unofficial Google Docs desktop wrapper',
+        description: 'Google Docs in a native-like Electron shell with optional offline support.',
+        grade: 'stable',
+        confinement: 'strict',
+        executableName: 'google-docs-linux',
+        icon: './assets/icon.png',
+        plugs: [
+          'desktop',
+          'desktop-legacy',
+          'x11',
+          'wayland',
+          'unity7',
+          'browser-support',
+          'network',
+          'network-bind',
+          'pulseaudio'
+        ],
+        categories: ['Office']
       }
     },
   ],
