@@ -1,7 +1,7 @@
 if (require('electron-squirrel-startup')) return;
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu, webContents } = require("electron")
+const { app, BrowserWindow, Menu, session } = require("electron")
 const path = require("path")
 const { updateElectronApp, UpdateSourceType } = require('update-electron-app')
 
@@ -13,6 +13,10 @@ function createWindow() {
     icon: __dirname + "/assets/icon.ico",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: false,
+      nativeWindowOpen: true,
+      contextIsolation: false,
+      sandbox: false,
     },
   });
 
@@ -22,7 +26,9 @@ function createWindow() {
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
-
+// Workarounds - #48
+app.commandLine.appendSwitch('disable-features', 'ImmersiveIme');
+app.commandLine.appendSwitch('enable-blink-features', 'TextInputIme');
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -55,21 +61,21 @@ const template = [
   // { role: 'appMenu' }
   ...(isMac
     ? [
-        {
-          label: app.name,
-          submenu: [
-            { role: "about" },
-            { type: "separator" },
-            { role: "services" },
-            { type: "separator" },
-            { role: "hide" },
-            { role: "hideOthers" },
-            { role: "unhide" },
-            { type: "separator" },
-            { role: "quit" },
-          ],
-        },
-      ]
+      {
+        label: app.name,
+        submenu: [
+          { role: "about" },
+          { type: "separator" },
+          { role: "services" },
+          { type: "separator" },
+          { role: "hide" },
+          { role: "hideOthers" },
+          { role: "unhide" },
+          { type: "separator" },
+          { role: "quit" },
+        ],
+      },
+    ]
     : []),
   // { role: 'fileMenu' }
   {
@@ -88,15 +94,15 @@ const template = [
       { role: "paste" },
       ...(isMac
         ? [
-            { role: "pasteAndMatchStyle" },
-            { role: "delete" },
-            { role: "selectAll" },
-            { type: "separator" },
-            {
-              label: "Speech",
-              submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
-            },
-          ]
+          { role: "pasteAndMatchStyle" },
+          { role: "delete" },
+          { role: "selectAll" },
+          { type: "separator" },
+          {
+            label: "Speech",
+            submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
+          },
+        ]
         : [{ role: "delete" }, { type: "separator" }, { role: "selectAll" }]),
     ],
   },
@@ -127,11 +133,11 @@ const template = [
       { role: "zoom" },
       ...(isMac
         ? [
-            { type: "separator" },
-            { role: "front" },
-            { type: "separator" },
-            { role: "window" },
-          ]
+          { type: "separator" },
+          { role: "front" },
+          { type: "separator" },
+          { role: "window" },
+        ]
         : [{ role: "close" }]),
     ],
   },
